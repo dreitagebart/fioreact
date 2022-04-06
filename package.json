@@ -1,0 +1,27 @@
+{
+  "name": "@fioreact/core",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "lerna link",
+    "docs": "lerna run dev --scope @fioreact/docs --stream",
+    "dev": "cross-env NODE_ENV=development rollup -c build.js -w",
+    "build": "rollup -c build.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.3",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.1",
+    "lerna": "^4.0.0",
+    "rollup": "^2.70.1",
+    "rollup-plugin-dts": "^4.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
